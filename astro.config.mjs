@@ -22,10 +22,7 @@ export default defineConfig({
 	moduleResolution: 'bundler',
 	integrations: [
 		starlight({
-			title: 'Glowup - Design System',
-			social: {
-				github: 'https://github.com/Behavy',
-			},
+			title: 'Reproductible example',
 			sidebar: [
 				{
 					label: 'Introduction',
