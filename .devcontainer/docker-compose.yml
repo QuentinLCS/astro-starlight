@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  nodejs-dev-environment:
+    image: quentinlcs/nodejs-dev-environment
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity # Overrides default command so things don't shut down after the process ends.
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  target:

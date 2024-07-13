@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/rust-postgres
+{
+	"name": "glowup-design-system",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "nodejs-dev-environment",
+	"workspaceFolder": "/workspace",
+	// Set *default* container specific settings.json values on container create.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				// VS Code don't watch files under ./target
+				"files.watcherExclude": {
+					"**/target/**": true
+				},
+				"extensions.verifySignature": false
+			},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"PKief.material-icon-theme",
+				"ms-vscode-remote.remote-containers",
+				"mhutchie.git-graph",
+				"cweijan.vscode-mysql-client2",
+				"aaron-bond.better-comments",
+				"usernamehw.errorlens",
+				"waderyan.gitblame",
+				"github.vscode-github-actions",
+				"GitHub.copilot",
+				"ms-vsliveshare.vsliveshare",
+				"DavidAnson.vscode-markdownlint",
+				"christian-kohler.path-intellisense",
+				"psioniq.psi-header",
+				"tamasfe.even-better-toml",
+				"mutantdino.resourcemonitor",
+				"fabiospampinato.vscode-terminals",
+				"pivaszbs.svelte-autoimport",
+				"svelte.svelte-vscode",
+				"ardenivanov.svelte-intellisense",
+				"fivethree.vscode-svelte-snippets",
+				"pranaygp.vscode-css-peek",
+				"bbugh.change-color-format",
+				"dbaeumer.vscode-eslint",
+				"ecmel.vscode-html-css",
+				"Lokalise.i18n-ally",
+				"astro-build.astro-vscode",
+				"unifiedjs.vscode-mdx"
+			]
+		}
+	},
+	"remoteEnv": {
+		// Pass in the host directory for Docker mount commands from inside the container
+		"HOST_PROJECT_PATH": "${localWorkspaceFolder}"
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5432],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "rustc --version",
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
