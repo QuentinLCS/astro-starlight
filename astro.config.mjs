@@ -10,7 +10,6 @@
  */
 
 import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
 
 import expressiveCode from "astro-expressive-code";
 
