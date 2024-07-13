@@ -12,30 +12,30 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import expressiveCode from "astro-expressive-code";
+
 // https://astro.build/config
 export default defineConfig({
-	esbuild: {
-		loader: 'tsx',
-		exclude: [],
-		target: 'esnext',
-	},
-	moduleResolution: 'bundler',
-	integrations: [
-		starlight({
-			title: 'Reproductible example',
-			sidebar: [
-				{
-					label: 'Introduction',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Getting Started', slug: 'introduction/getting_started' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
-		}),
-	],
+  esbuild: {
+    loader: 'tsx',
+    exclude: [],
+    target: 'esnext'
+  },
+  moduleResolution: 'bundler',
+  integrations: [expressiveCode()] // starlight({
+  // 	title: 'Reproductible example',
+  // 	sidebar: [
+  // 		{
+  // 			label: 'Introduction',
+  // 			items: [
+  // 				// Each item here is one entry in the navigation menu.
+  // 				{ label: 'Getting Started', slug: 'introduction/getting_started' },
+  // 			],
+  // 		},
+  // 		{
+  // 			label: 'Reference',
+  // 			autogenerate: { directory: 'reference' },
+  // 		},
+  // 	],
+  // }),
 });
