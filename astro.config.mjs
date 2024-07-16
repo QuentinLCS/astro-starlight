@@ -21,7 +21,11 @@ export default defineConfig({
     target: 'esnext'
   },
   moduleResolution: 'bundler',
-  integrations: [expressiveCode()] // starlight({
+  integrations: [expressiveCode({
+    shiki: false,
+    frames: false,
+    textMarkers: false,
+  })] // starlight({
   // 	title: 'Reproductible example',
   // 	sidebar: [
   // 		{
